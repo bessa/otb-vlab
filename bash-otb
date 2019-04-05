@@ -11,5 +11,3 @@ esac | gunzip -c > "$IMG"
 qemu-system-x86_64 -enable-kvm -cpu host  -m 1G \
         -drive "format=raw,file=$IMG,snapshot=on" \
         -nographic -netdev tap,id=br-lan,ifname=tap0,script=/root/angt/bash-1,downscript=no -device e1000,netdev=br-lan  -netdev tap,id=wan,ifname=tap1,script=/root/angt/bash-2,downscript=no -device e1000,netdev=wan
-
-#bash /root/angt/bash-up
