@@ -1,0 +1,3 @@
+#! /bin/sh
+ip li del tap1 2>/dev/null
+exit 0

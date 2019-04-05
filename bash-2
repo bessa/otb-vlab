@@ -1,0 +1,7 @@
+#! /bin/sh
+ip netns del otb1 2>/dev/null
+ip netns add otb1 2>/dev/null
+ip li set tap0 netns otb1 2>/dev/null
+ip netns exec otb1 ip li set tap0 up 2>/dev/null
+ip netns exec otb1 dhclient tap0 &  2>/dev/null
+exit 0
